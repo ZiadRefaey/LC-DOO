@@ -1,6 +1,6 @@
-import RadioGroup from "./RadioGroup";
+import RadioGroup from "../../ui/RadioGroup";
 import MultiRangeSlider from "multi-range-slider-react";
-import RatingRadioButton from "./ratingRadioButton";
+import RatingRadioButton from "../../ui/RatingRadioButton";
 
 const radioFilters = [
   {

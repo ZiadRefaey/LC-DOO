@@ -36,7 +36,6 @@ export default function StarRatingDisplay({
     }
     //determine how many stars are in the array after adding the full and half stars
     const currentStarsLength = stars.length;
-    console.log(stars.length);
     //add the empty stars
     for (let i = 0; i < 5 - currentStarsLength; i++) {
       stars.push(

@@ -1,7 +1,7 @@
 import PaginationPages from "../ui/PaginationPages";
 import ProductsLayout from "../features/products/ProductsLayout";
 import ProductsList from "../features/products/ProductsList";
-import ProductsSideBar from "../ui/ProductsSideBar";
+import ProductsSideBar from "../features/products/ProductsSideBar";
 
 export default function Products() {
   return (
