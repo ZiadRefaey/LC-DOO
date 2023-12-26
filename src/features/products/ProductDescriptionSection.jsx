@@ -1,6 +1,6 @@
 import { useState } from "react";
 import StarRatingDisplay from "../../ui/StarRatingDisplay";
-import ProductDifferentColorDisplay from "./productDifferentColorDisplay";
+import ProductDifferentColorDisplay from "./ProductDifferentColorDisplay";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { FaShareAlt } from "react-icons/fa";
 
