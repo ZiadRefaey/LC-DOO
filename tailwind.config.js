@@ -35,6 +35,9 @@ export default {
       blur: {
         oval: "110px",
       },
+      gridColumn: {
+        "span-1/2": "span 1 / span 2",
+      },
     },
   },
   plugins: [],

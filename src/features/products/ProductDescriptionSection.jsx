@@ -1,8 +1,8 @@
 import { useState } from "react";
 import StarRatingDisplay from "../../ui/StarRatingDisplay";
 import ProductDifferentColorDisplay from "./ProductDifferentColorDisplay";
-import { FaMinus, FaPlus } from "react-icons/fa6";
 import { FaShareAlt } from "react-icons/fa";
+import IncrementDecrementControl from "../../ui/IncrementDecrementControl";
 
 export default function ProductDescriptionSection() {
   const [quantity, setQuantity] = useState(1);
@@ -45,23 +45,13 @@ export default function ProductDescriptionSection() {
         <div className="flex items-end justify-between w-full">
           <div className="">
             <p className="text-xl mb-2">Quantity :</p>
-            <div className="flex items-center justify-center gap-3">
-              <button
-                onClick={() =>
-                  quantity > 1 ? setQuantity(quantity - 1) : null
-                }
-                className="py-2 px-3 border border-translucent rounded-md hover:border-blue-500 transition-all duration-100"
-              >
-                <FaMinus className="text-tertiary text-lg " />
-              </button>
-              <p>{quantity}</p>
-              <button
-                onClick={() => setQuantity(quantity + 1)}
-                className="py-2 px-3 border border-translucent rounded-md hover:border-blue-500 transition-all duration-100"
-              >
-                <FaPlus className="text-tertiary text-lg " />
-              </button>
-            </div>
+            <IncrementDecrementControl
+              number={quantity}
+              setNumber={setQuantity}
+              buttonsClassName={
+                "py-2 px-3 border border-translucent rounded-md hover:border-black transition-all duration-200"
+              }
+            />
           </div>
           <FaShareAlt className="text-lightGray text-3xl hover:text-tertiary duration-200 transition-all cursor-pointer" />
         </div>

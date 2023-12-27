@@ -5,6 +5,8 @@ import { createContext, useEffect, useState } from "react";
 import Homepage from "./pages/Homepage";
 import Products from "./pages/Products";
 import ProductOverview from "./pages/ProductOverview";
+import Cart from "./pages/Cart";
+import Wishlist from "./pages/Wishlist";
 export const ScreenContext = createContext(null);
 
 const router = createBrowserRouter([
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
       { path: "/", element: <Homepage /> },
       { path: "/products", element: <Products /> },
       { path: "/products/:productId", element: <ProductOverview /> },
+      { path: "/cart", element: <Cart /> },
+      { path: "/wishlist", element: <Wishlist /> },
     ],
   },
 ]);

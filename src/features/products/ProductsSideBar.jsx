@@ -51,7 +51,7 @@ const radioFilters = [
 ];
 export default function ProductsSideBar() {
   return (
-    <aside className="h-[100vh] px-5 py-5 bg-primary overflow-y-scroll sticky font-bold">
+    <aside className="h-[100vh] px-5 py-5 bg-primary overflow-y-scroll sticky top-[82px] font-bold">
       <h2 className=" text-md-h3 mb-4">Filters</h2>
       <RadioGroup groups={radioFilters} />
       <div className="mb-5">
