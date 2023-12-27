@@ -6,21 +6,18 @@ import SecondaryButton from "./SecondaryButton";
 import NavLinksWrapper from "./NavLinksWrapper";
 import Search from "./Search";
 import { useState } from "react";
+import logo from "../assets/Logo.png";
 
 export default function DesktopNavbar() {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <NavWrapper>
       <div className="flex items-center justify-start transition-all duration-500 ">
-        <li>
-          <Link
-            to="/"
-            className="inria-font text-5xl font-thin text-tertiary cursor-pointer mr-6 "
-          >
-            L&CDOO
+        <li className="mr-3">
+          <Link to="/" className=" ">
+            <img src={logo} className="max-w-[250px]" alt="" />
           </Link>
         </li>
-        {/* {isFocused ? null : <NavLinksWrapper />} */}
         <NavLinksWrapper isFocused={isFocused} />
       </div>
       <div
@@ -33,10 +30,12 @@ export default function DesktopNavbar() {
           <IoIosSunny className="w-6 h-6 text-darkOrange group-hover:text-lightOrange transition-all duration-150" />
         </div>
 
-        <PrimaryButton size="small" isLink={"/singup"} className={"min-w-max"}>
+        <PrimaryButton size="small" isLink={"/signup"} className={"min-w-max"}>
           Sign Up
         </PrimaryButton>
-        <SecondaryButton className={"text-sm"}>Sign in</SecondaryButton>
+        <SecondaryButton isLink={"/signin"} className={"text-sm"}>
+          Sign in
+        </SecondaryButton>
       </div>
     </NavWrapper>
   );

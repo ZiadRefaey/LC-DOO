@@ -7,6 +7,8 @@ import Products from "./pages/Products";
 import ProductOverview from "./pages/ProductOverview";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 export const ScreenContext = createContext(null);
 
 const router = createBrowserRouter([
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
       { path: "/products/:productId", element: <ProductOverview /> },
       { path: "/cart", element: <Cart /> },
       { path: "/wishlist", element: <Wishlist /> },
+      { path: "/signin", element: <SignIn /> },
+      { path: "/signup", element: <SignUp /> },
     ],
   },
 ]);

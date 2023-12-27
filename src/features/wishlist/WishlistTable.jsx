@@ -91,9 +91,7 @@ export default function WisshlistTable() {
             className={`flex items-center justify-center gap-4 w-[128px] lg:w-[170px] xl:[213px]`}
           >
             <FaTrashAlt className="cursor-pointer text-lightGray hover:text-black duration-300 transition-all text-xl" />
-            <PrimaryButton
-              className={"flex items-center justify-center py-2 py-3"}
-            >
+            <PrimaryButton className={"flex items-center justify-center py-3"}>
               <FaShoppingCart className="inline mr-1" />
               <p className="text-sm">Add to cart</p>
             </PrimaryButton>

@@ -5,12 +5,14 @@ export default function PrimaryButton({
   className,
   isLink,
   onCLick,
+  padding,
 }) {
   if (isLink)
     return (
       <Link to={isLink}>
         <button
           className={`${className} py-2 px-5 text-sm rounded-lg md:text-md lg:text-lg md:rounded-xl bg-tertiary hover:opacity-75 text-white transition-all duration-150`}
+          style={{ padding: padding }}
         >
           {children}
         </button>
@@ -20,6 +22,7 @@ export default function PrimaryButton({
     <button
       onClick={onCLick}
       className={` py-2 px-5 text-sm rounded-lg md:text-md lg:text-lg md:rounded-xl ${className} bg-tertiary hover:opacity-75 text-white transition-all duration-150`}
+      style={{ padding: padding }}
     >
       {children}
     </button>

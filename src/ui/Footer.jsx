@@ -4,7 +4,7 @@ import { FaRegCopyright } from "react-icons/fa";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import SocialWrapper from "./SocialWrapper";
-
+import logo from "../assets/Logo.png";
 export default function Footer() {
   return (
     <footer className="w-full bg-gray-800">
@@ -14,7 +14,7 @@ export default function Footer() {
             to="/"
             className="inria-font text-5xl font-thin text-white cursor-pointer mr-6 "
           >
-            L&CDOO
+            <img src={logo} alt="logo" className="max-w-[250px] -mb-5" />
           </Link>
           <p className="text-primary inria-font ">Homemade & Fashion Company</p>
         </div>
