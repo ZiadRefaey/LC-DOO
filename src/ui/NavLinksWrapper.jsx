@@ -35,7 +35,7 @@ export default function NavLinksWrapper({ isFocused }) {
         <NavLink to={"/products"}>Products</NavLink>
       </li>
       <li>
-        <NavLink to={"/contact"}>Contact Us</NavLink>
+        <NavLink to={"/contactus"}>Contact Us</NavLink>
       </li>
       <li>
         <NavLink to={"/blog"}>Blog</NavLink>

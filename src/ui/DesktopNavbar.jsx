@@ -12,7 +12,7 @@ export default function DesktopNavbar() {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <NavWrapper>
-      <div className="flex items-center justify-start transition-all duration-500 ">
+      <div className="flex items-center justify-start transition-all duration-500 static">
         <li className="mr-3">
           <Link to="/" className=" ">
             <img src={logo} className="max-w-[250px]" alt="" />

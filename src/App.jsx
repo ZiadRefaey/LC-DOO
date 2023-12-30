@@ -9,8 +9,9 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-export const ScreenContext = createContext(null);
+import ContactUs from "./pages/user pages/Contactus";
 
+export const ScreenContext = createContext(null);
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
       { path: "/wishlist", element: <Wishlist /> },
       { path: "/signin", element: <SignIn /> },
       { path: "/signup", element: <SignUp /> },
+      { path: "/contactus", element: <ContactUs /> },
+      { path: "/admin/dashboard", element: <ContactUs /> },
     ],
   },
 ]);
