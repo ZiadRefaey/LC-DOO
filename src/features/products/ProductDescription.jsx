@@ -1,4 +1,5 @@
 export default function ProductDescription() {
+  
   return (
     <p className="text-lg md:text-xl">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel cum

@@ -1,5 +1,5 @@
-import WisshlistTable from "../features/wishlist/wishlistTable";
-import Section from "../ui/Section";
+import WisshlistTable from "../../features/wishlist/wishlistTable";
+import Section from "../../ui/Section";
 
 export default function Wishlist() {
   return (

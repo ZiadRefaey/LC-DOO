@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.0.8",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@tanstack/react-table": "^8.11.2",
     "framer-motion": "^10.16.16",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

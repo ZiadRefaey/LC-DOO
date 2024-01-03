@@ -5,7 +5,7 @@ export default function Search({ setIsFocused, isFocused }) {
   const InputRef = useRef();
   //to focus on the input when the div is clicked on
   function handleClick() {
-    setIsFocused(!isFocused);
+    setIsFocused(true);
     InputRef.current.focus();
   }
   return (
@@ -14,6 +14,7 @@ export default function Search({ setIsFocused, isFocused }) {
         className={`flex items-center justify-center cursor-pointer border-[1px] rounded-lg py-2 px-1 transition-all duration-500 ${
           isFocused ? "flex-grow" : ""
         }`}
+        onBlur={() => setIsFocused(false)}
         onClick={handleClick}
       >
         <CiSearch className="w-7 h-7 cursor-pointer mr-1" />

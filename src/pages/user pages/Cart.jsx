@@ -1,6 +1,6 @@
-import Section from "../ui/Section";
-import CartTable from "../features/Cart/CartTable";
-import CartSummary from "../features/Cart/CartSummary";
+import Section from "../../ui/Section";
+import CartTable from "../../features/Cart/CartTable";
+import CartSummary from "../../features/Cart/CartSummary";
 
 export default function Cart() {
   return (

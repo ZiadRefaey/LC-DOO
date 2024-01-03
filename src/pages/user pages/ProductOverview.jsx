@@ -1,7 +1,7 @@
-import ProductDescriptionSection from "../features/products/ProductDescriptionSection";
-import ProductImageSection from "../features/products/ProductImageSection";
-import ProductsReviewsAndDescription from "../features/products/ProductsReviewsAndDescription";
-import Section from "../ui/Section";
+import ProductDescriptionSection from "../../features/products/ProductDescriptionSection";
+import ProductImageSection from "../../features/products/ProductImageSection";
+import ProductsReviewsAndDescription from "../../features/products/ProductsReviewsAndDescription";
+import Section from "../../ui/Section";
 export default function ProductOverview() {
   return (
     <Section className={"px-5"}>

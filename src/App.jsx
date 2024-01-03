@@ -2,14 +2,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./ui/Root";
 import ErrorPage from "./pages/ErrorPage";
 import { createContext, useEffect, useState } from "react";
-import Homepage from "./pages/Homepage";
-import Products from "./pages/Products";
-import ProductOverview from "./pages/ProductOverview";
-import Cart from "./pages/Cart";
-import Wishlist from "./pages/Wishlist";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+import Homepage from "./pages/user pages/Homepage";
+import Products from "./pages/user pages/Products";
+import ProductOverview from "./pages/user pages/ProductOverview";
+import Cart from "./pages/user pages/Cart";
+import Wishlist from "./pages/user pages/Wishlist";
+import SignIn from "./pages/user pages/SignIn";
+import SignUp from "./pages/user pages/SignUp";
 import ContactUs from "./pages/user pages/Contactus";
+import AdminDashboard from "./pages/admin pages/AdminDashboard";
+import AdminProducts from "./pages/admin pages/AdminProducts";
 
 export const ScreenContext = createContext(null);
 const router = createBrowserRouter([
@@ -26,7 +28,8 @@ const router = createBrowserRouter([
       { path: "/signin", element: <SignIn /> },
       { path: "/signup", element: <SignUp /> },
       { path: "/contactus", element: <ContactUs /> },
-      { path: "/admin/dashboard", element: <ContactUs /> },
+      { path: "/admin/dashboard", element: <AdminDashboard /> },
+      { path: "/admin/products", element: <AdminProducts /> },
     ],
   },
 ]);

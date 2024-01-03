@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&display=swap");
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/violet.css";
+@import "@fontsource/roboto/300.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
 * {
   padding: 0;
   margin: 0;
@@ -13,4 +20,7 @@
 }
 .backdrop-blur {
   backdrop-filter: blur(1px);
+}
+.products-grid {
+  grid-template-columns: 5rem 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
