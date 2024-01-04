@@ -14,11 +14,12 @@ export default {
         placeholder: "#A9A9A9",
         adminBg: "#f9fafd",
         adminPrimary: "#fff",
-        adminSecondary: "#f6f7fb",
+        adminSecondary: "#ebedf0",
         adminTertiary: "#536de6",
         adminTertiaryLight: "#8790f6",
         success: "#3dd9ad",
         danger: "#ff5b5b",
+        warning: "#facc51",
       },
       backgroundImage: {
         "custom-products": "url('/custom-products-bg.jpg')",

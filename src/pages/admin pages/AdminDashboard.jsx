@@ -4,13 +4,14 @@ import AdminActiveButton from "../../ui/AdminUI/AdminActiveButton";
 import IncomeOutcome from "../../features/dashboard/IncomeOutcome";
 import OrdersChart from "../../features/dashboard/OrdersChart";
 import HighestSellingProducts from "../../features/dashboard/HighestSellingProducts";
+import AdminPageTitle from "../../ui/AdminUI/AdminPageTitle";
 
 export default function AdminDashboard() {
   const [active, setActive] = useState("1D");
   return (
     <>
       <div className="w-full flex items-center justify-between mb-10 ">
-        <h1 className="text-3xl font-medium">Dashboard</h1>
+        <AdminPageTitle>Dashboard</AdminPageTitle>
         <div className="flex gap-2">
           <AdminActiveButton active={active} setActive={setActive}>
             1D

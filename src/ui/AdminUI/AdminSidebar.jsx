@@ -14,22 +14,22 @@ export default function AdminSidebar() {
           icon={<SiGoogleanalytics />}
         />
         <AdminNavLink
-          LinkPath={"/admin/dashboard"}
+          LinkPath={"/admin/products"}
           LinkTitle={"Products"}
           icon={<GiAmpleDress />}
         />
         <AdminNavLink
-          LinkPath={"/admin/dashboard"}
-          LinkTitle={"Orderrs"}
+          LinkPath={"/admin/orders"}
+          LinkTitle={"Orders"}
           icon={<MdAttachMoney />}
         />
         <AdminNavLink
-          LinkPath={"/admin/dashboard"}
+          LinkPath={"/admin/projects"}
           LinkTitle={"Projects"}
           icon={<FaScissors />}
         />
         <AdminNavLink
-          LinkPath={"/admin/dashboard"}
+          LinkPath={"/admin/customers"}
           LinkTitle={"Customers"}
           icon={<FaPeopleGroup />}
         />

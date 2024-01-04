@@ -12,6 +12,8 @@ import SignUp from "./pages/user pages/SignUp";
 import ContactUs from "./pages/user pages/Contactus";
 import AdminDashboard from "./pages/admin pages/AdminDashboard";
 import AdminProducts from "./pages/admin pages/AdminProducts";
+import AdminOrders from "./pages/admin pages/AdminOrders";
+import AdminCustomers from "./pages/admin pages/AdminCustomers";
 
 export const ScreenContext = createContext(null);
 const router = createBrowserRouter([
@@ -30,6 +32,8 @@ const router = createBrowserRouter([
       { path: "/contactus", element: <ContactUs /> },
       { path: "/admin/dashboard", element: <AdminDashboard /> },
       { path: "/admin/products", element: <AdminProducts /> },
+      { path: "/admin/orders", element: <AdminOrders /> },
+      { path: "/admin/customers", element: <AdminCustomers /> },
     ],
   },
 ]);

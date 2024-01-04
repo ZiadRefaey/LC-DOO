@@ -6,12 +6,14 @@ export default function PrimaryButton({
   isLink,
   onCLick,
   padding,
+  rounded = "rounded-lg md:rounded-xl",
+  color = "bg-tertiary",
 }) {
   if (isLink)
     return (
       <Link to={isLink}>
         <button
-          className={`${className} py-2 px-5 text-sm rounded-lg md:text-md lg:text-lg md:rounded-xl bg-tertiary hover:opacity-75 text-white transition-all duration-150`}
+          className={`${className} py-2 px-5 text-sm ${rounded} md:text-md lg:text-lg ${color} hover:opacity-75 text-white transition-all duration-150`}
           style={{ padding: padding }}
         >
           {children}
@@ -21,7 +23,7 @@ export default function PrimaryButton({
   return (
     <button
       onClick={onCLick}
-      className={` py-2 px-5 text-sm rounded-lg md:text-md lg:text-lg md:rounded-xl ${className} bg-tertiary hover:opacity-75 text-white transition-all duration-150`}
+      className={` py-2 px-5 text-sm ${rounded} md:text-md lg:text-lg ${className} ${color} hover:opacity-75 text-white transition-all duration-150`}
       style={{ padding: padding }}
     >
       {children}

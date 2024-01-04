@@ -7,7 +7,7 @@ export default function AdminTableHeader({
 }) {
   return (
     <th
-      className={`bg-adminSecondary flex items-center justify-between  gap-4 ${className} p-4 cursor-pointer`}
+      className={`bg-adminSecondary text-sm flex items-center justify-between  gap-4 ${className} p-4 cursor-pointer`}
     >
       {children}
       {!sortable ? null : <FaSort className="text-xs" />}
