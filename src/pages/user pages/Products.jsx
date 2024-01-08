@@ -1,7 +1,7 @@
-import PaginationPages from "../../ui/PaginationPages";
 import ProductsLayout from "../../features/products/ProductsLayout";
 import ProductsList from "../../features/products/ProductsList";
 import ProductsSideBar from "../../features/products/ProductsSideBar";
+import Pagination from "../../ui/Pagination";
 
 export default function Products() {
   return (
@@ -10,7 +10,7 @@ export default function Products() {
         <ProductsSideBar />
         <ProductsLayout>
           <ProductsList />
-          <PaginationPages />
+          <Pagination />
         </ProductsLayout>
       </div>
     </div>

@@ -1,4 +1,4 @@
-export default function Tag({ type, children }) {
+export default function Tag({ type, children, className }) {
   switch (children.toLowerCase()) {
     case "active":
       type = "success";
@@ -33,7 +33,12 @@ export default function Tag({ type, children }) {
     case "cancelled":
       type = "danger";
       break;
-
+    case "ongoing":
+      type = "ready";
+      break;
+    case "finished":
+      type = "success";
+      break;
     // Add more cases if needed
     default:
       // Handle other cases if needed
@@ -51,7 +56,7 @@ export default function Tag({ type, children }) {
           : type === "warning"
           ? " bg-warning"
           : ""
-      } px-2 py-1 text-white rounded-md flex items-center justify-center`}
+      } px-2 py-1 text-white rounded-md flex items-center justify-center text-center max-w-[100px] ${className}`}
     >
       {children}
     </div>

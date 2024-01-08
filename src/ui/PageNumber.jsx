@@ -1,13 +1,23 @@
 export default function PageNumber({
+  pageIndex,
   children,
   rounded = "rounded-md",
-  color = "text-secondary hover:text-primary hover:bg-tertiary",
+  table,
 }) {
   return (
     <li
-      className={`min-w-[40px] h-[40px] ${color} ${rounded} transition-all duration-200  cursor-pointer flex items-center justify-center`}
+      className={`min-w-[40px] h-[40px] ${
+        pageIndex === Number(children)
+          ? "text-white bg-adminTertiary"
+          : "hover:text-black hover:bg-adminSecondary"
+      }  ${rounded}  cursor-pointer flex items-center justify-center`}
     >
-      {children}
+      <button
+        className="w-full h-full"
+        onClick={() => table.setPageIndex(Number(children - 1))}
+      >
+        {children}
+      </button>
     </li>
   );
 }
