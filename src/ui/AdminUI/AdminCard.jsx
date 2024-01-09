@@ -1,6 +1,8 @@
-export default function AdminCard({ className, children }) {
+export default function AdminCard({ className, children, padding = "p-4" }) {
   return (
-    <div className={`${className} p-4 rounded-lg bg-adminPrimary`}>
+    <div
+      className={`${className} ${padding} rounded-lg bg-adminPrimary shadow-lg`}
+    >
       {children}
     </div>
   );

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "product": "Flaux leather bag",
+    "price": "250",
+    "quantity": "4",
+    "total": "1000"
+  },
+  {
+    "id": "2",
+    "product": "Flaux leather bag",
+    "price": "150",
+    "quantity": "1",
+    "total": "150"
+  },
+  {
+    "id": 3,
+    "product": "Flaux leather bag",
+    "price": "200",
+    "quantity": "2",
+    "total": "400"
+  },
+  {
+    "id": "4",
+    "product": "Flaux leather bag",
+    "price": "180",
+    "quantity": "1",
+    "total": "180"
+  }
+]

@@ -7,57 +7,50 @@ import { FaSort, FaSortDown, FaSortUp } from "react-icons/fa";
 
 export default function TableRenderer({ table }) {
   return (
-    <div>
-      <AdminTableUI>
-        <thead>
-          <AdminTableRow
-            cols={"grid-cols-[4rem,1.5fr,2fr,2fr,1fr,1.5fr,1fr,1fr]"}
-          >
-            {table.getHeaderGroups()[0].headers.map((header) => (
-              <AdminTableHeader
-                key={header.id}
-                onClick={header.column.getToggleSortingHandler()}
-                sortable={header.sortable}
-              >
-                <div className="flex items-center justify-between gap-4 w-full ">
-                  {flexRender(
-                    header.column.columnDef.header,
-                    header.getContext()
-                  )}
-                  {{
-                    asc: (
-                      <div className="flex items-center justify-center flex-col  text-sm">
-                        <FaSortUp className="-mb-[14px]" />
-                        <FaSortDown className="m-0 opacity-30" />
-                      </div>
-                    ),
-                    desc: (
-                      <div className="flex items-center justify-center flex-col  text-sm">
-                        <FaSortUp className="-mb-[14px] opacity-30" />
-                        <FaSortDown className="m-0 " />
-                      </div>
-                    ),
-                  }[String(header.column.getIsSorted())] || <FaSort />}
-                </div>
-              </AdminTableHeader>
+    <AdminTableUI>
+      <thead>
+        <AdminTableRow>
+          {table.getHeaderGroups()[0].headers.map((header) => (
+            <AdminTableHeader
+              key={header.id}
+              onClick={header.column.getToggleSortingHandler()}
+              sortable={header.sortable}
+            >
+              <div className="flex items-center justify-between gap-4 w-full ">
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext()
+                )}
+                {{
+                  asc: (
+                    <div className="flex items-center justify-center flex-col  text-sm">
+                      <FaSortUp className="-mb-[14px]" />
+                      <FaSortDown className="m-0 opacity-30" />
+                    </div>
+                  ),
+                  desc: (
+                    <div className="flex items-center justify-center flex-col  text-sm">
+                      <FaSortUp className="-mb-[14px] opacity-30" />
+                      <FaSortDown className="m-0 " />
+                    </div>
+                  ),
+                }[String(header.column.getIsSorted())] || <FaSort />}
+              </div>
+            </AdminTableHeader>
+          ))}
+        </AdminTableRow>
+      </thead>
+      <tbody>
+        {table.getRowModel().rows.map((row) => (
+          <AdminTableRow key={row.id}>
+            {row.getVisibleCells().map((cell) => (
+              <AdminTableData key={cell.id}>
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </AdminTableData>
             ))}
           </AdminTableRow>
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <AdminTableRow
-              cols={"grid-cols-[4rem,1.5fr,2fr,2fr,1fr,1.5fr,1fr,1fr]"}
-              key={row.id}
-            >
-              {row.getVisibleCells().map((cell) => (
-                <AdminTableData key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </AdminTableData>
-              ))}
-            </AdminTableRow>
-          ))}
-        </tbody>
-      </AdminTableUI>
-    </div>
+        ))}
+      </tbody>
+    </AdminTableUI>
   );
 }

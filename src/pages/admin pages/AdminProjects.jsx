@@ -25,10 +25,15 @@ export default function AdminProjects() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-4">
-        <div>
-          <ProjectCard />
-        </div>
+      <div className="grid grid-cols-4 gap-10">
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
       </div>
     </>
   );

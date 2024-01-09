@@ -24,3 +24,6 @@
 .products-grid {
   grid-template-columns: 5rem 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+.table-layout-auto {
+  table-layout: auto;
+}

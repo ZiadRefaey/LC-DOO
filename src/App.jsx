@@ -15,6 +15,8 @@ import AdminProducts from "./pages/admin pages/AdminProducts";
 import AdminOrders from "./pages/admin pages/AdminOrders";
 import AdminCustomers from "./pages/admin pages/AdminCustomers";
 import AdminProjects from "./pages/admin pages/AdminProjects";
+import AdminProjectOverview from "./pages/admin pages/AdminProjectOverview";
+import AdminProductOverview from "./pages/admin pages/AdminProductOverview";
 
 export const ScreenContext = createContext(null);
 const router = createBrowserRouter([
@@ -33,9 +35,11 @@ const router = createBrowserRouter([
       { path: "/contactus", element: <ContactUs /> },
       { path: "/admin/dashboard", element: <AdminDashboard /> },
       { path: "/admin/products", element: <AdminProducts /> },
+      { path: "/admin/products/:productId", element: <AdminProductOverview /> },
       { path: "/admin/orders", element: <AdminOrders /> },
       { path: "/admin/customers", element: <AdminCustomers /> },
       { path: "/admin/projects", element: <AdminProjects /> },
+      { path: "/admin/projects/:projectId", element: <AdminProjectOverview /> },
     ],
   },
 ]);

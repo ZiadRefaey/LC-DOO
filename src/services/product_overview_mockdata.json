@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "price": "250",
+    "costs": "Flaux leather bag",
+    "revenue": "4"
+  },
+  {
+    "id": "2",
+    "price": "150",
+    "costs": "Flaux leather bag",
+    "revenue": "1"
+  },
+  {
+    "id": 3,
+    "price": "200",
+    "costs": "Flaux leather bag",
+    "revenue": "2"
+  },
+  {
+    "id": "4",
+    "price": "180",
+    "costs": "Flaux leather bag",
+    "revenue": "1"
+  }
+]

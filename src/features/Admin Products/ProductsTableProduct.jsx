@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import Bag from "../../assets/Beige.png";
 import StarRatingDisplay from "../../ui/StarRatingDisplay";
 export default function ProductsTableProduct({ children }) {
   return (
-    <div className="flex items-center justify-start gap-6 w-full ">
+    <Link to={'/admin/products/1'} className="flex items-center justify-start gap-6 w-full ">
       <div className="object-contain w-[50px]">
         <img src={Bag} alt="product image" className="w-full h-full" />
       </div>
@@ -10,6 +11,6 @@ export default function ProductsTableProduct({ children }) {
         <p>{children}</p>
         <StarRatingDisplay rating={5} size={18} />
       </div>
-    </div>
+    </Link>
   );
 }
