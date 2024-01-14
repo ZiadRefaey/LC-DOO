@@ -1,5 +1,4 @@
 import ProjectCard from "../../features/Admin Projects/ProjectCard";
-import AdminCard from "../../ui/AdminUI/AdminCard";
 import AdminPageTitle from "../../ui/AdminUI/AdminPageTitle";
 
 export default function AdminProjects() {

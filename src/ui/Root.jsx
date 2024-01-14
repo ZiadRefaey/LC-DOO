@@ -5,6 +5,7 @@ import { ScreenContext } from "../App";
 import Footer from "./Footer";
 import AdminSidebar from "./AdminUI/AdminSidebar";
 import AdminHeader from "./AdminUI/AdminHeader";
+import AppLayout from "./AppLayout";
 
 export default function Root() {
   const location = useLocation();
@@ -23,9 +24,9 @@ export default function Root() {
   return (
     <>
       {screenWidth.currentWidth > screenWidth.xl && <DesktopNavbar />}
-      <main id="detail">
+      <AppLayout id="detail">
         <Outlet />
-      </main>
+      </AppLayout>
       <Footer />
     </>
   );

@@ -8,7 +8,7 @@ export default function HomepageCustomProducts() {
     >
       <div
         style={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
-        className="max-w-[900px] m-auto px-10 py-7 backdrop:blur-md bg-white flex items-center justify-center flex-col backdrop-blur-lg"
+        className="max-w-[900px] m-auto px-10 py-7 backdrop:blur-md flex items-center justify-center flex-col backdrop-blur-lg"
       >
         <h5 className="text-sm-h4 md:text-md-h4 lg:text-lg-h4 text-center">
           Have any product in mind?

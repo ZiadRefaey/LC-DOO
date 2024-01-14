@@ -9,8 +9,7 @@ export default function ContactUs() {
     <>
       <Section className={"grid grid-cols-1 md:grid-cols-2 gap-10"}>
         <ContactForm />
-        <div className="h-full w-full relative">
-          <div className="absolute -top-10 -right-20 h-[80%] w-[45%] bg-tertiary -z-10"></div>
+        <div className="h-full w-full ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.108913052405!2d30.994195198191203!3d30.808425098806776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c9843ccb08d3%3A0x60cc40685af0164f!2sUmm%20al-Qura%20Hospital!5e0!3m2!1sen!2seg!4v1703703593786!5m2!1sen!2seg"
             loading="lazy"

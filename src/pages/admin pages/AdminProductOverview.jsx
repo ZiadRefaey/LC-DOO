@@ -4,15 +4,42 @@ import AdminProductImageSection from "../../features/Admin Products/AdminProduct
 import productImg from "../../assets/Beige.png";
 import AdminProductDetails from "../../features/Admin Products/AdminProductDetails";
 import BasicTable from "../../ui/BasicTable";
-import data from "../../services/product_overview_mockdata.json";
 
 export default function AdminProductOverview() {
-  const columns = [
-    { id: "id", header: "ID" },
-    { id: "price", header: "Price" },
-    { id: "costs", header: "Costs" },
-    { id: "revenue", header: "Revenue" },
+  const columns = ["ID", "Name", "Price", "Costs", "Revenue"];
+  const data = [
+    {
+      id: "1",
+      name: "Flaux leatherr bag",
+      price: "250",
+      costs: 150,
+      revenue: "4",
+    },
+    {
+      id: "2",
+      name: "Flaux leatherr bag",
+      price: "150",
+      costs: 150,
+      revenue: "1",
+    },
+    {
+      id: 3,
+      name: "Flaux leatherr bag",
+      price: "200",
+      costs: 150,
+      revenue: "2",
+    },
+    {
+      id: "4",
+      name: "Flaux leatherr bag",
+      price: "180",
+      costs: 150,
+      revenue: "1",
+    },
   ];
+
+  console.log(data);
+
   return (
     <>
       <AdminPageTitle>Product</AdminPageTitle>

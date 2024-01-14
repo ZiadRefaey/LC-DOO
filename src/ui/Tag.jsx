@@ -6,13 +6,13 @@ export default function Tag({ type, children, className }) {
     case "deactive":
       type = "danger";
       break;
-    case "payment failed":
+    case "failed":
       type = "danger";
       break;
     case "paid":
       type = "success";
       break;
-    case "awaiting authorization":
+    case "waiting":
       type = "warning";
       break;
     case "shipped":

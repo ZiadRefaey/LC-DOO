@@ -1,38 +1,61 @@
-import ProductsTableProduct from "../../features/Admin Products/ProductsTableProduct";
 import AdminCard from "../../ui/AdminUI/AdminCard";
 import BasicTable from "../../ui/BasicTable";
 import Tag from "../../ui/Tag";
-import data from "../../services/project_overview_mockdata.json";
 import PrimaryButton from "../../ui/PrimaryButton";
+import ProductsTableProduct from "../../features/Admin Products/ProductsTableProduct";
 export default function AdminProjectOverview({
   ProjectTitle = "Black flaux leather bag, white fur coat and brown school bag",
 }) {
   const columns = [
+    "Porduct ID",
+    "Product",
+    "Color",
+    "Price",
+    "Quantity",
+    "Total",
+  ];
+  const data = [
     {
-      id: "id",
-      header: "Porduct ID",
-      cell: (props) => <p>{props.getValue()}</p>,
-    },
-
-    {
-      id: "product",
-      header: "Product",
-      cell: (props) => (
-        <ProductsTableProduct>{props.getValue()}</ProductsTableProduct>
+      id: "1",
+      product: (
+        <ProductsTableProduct>Flaux leather Beige bag</ProductsTableProduct>
       ),
+      color: "Blue",
+      price: "250",
+      costs: "Flaux leather bag",
+      revenue: "4",
     },
     {
-      id: "color",
-      header: "Color",
+      id: "1",
+      product: (
+        <ProductsTableProduct>Flaux leather Beige bag</ProductsTableProduct>
+      ),
+      color: "Blue",
+      price: "250",
+      costs: "Flaux leather bag",
+      revenue: "4",
     },
-    { id: "price", header: "Price" },
-    { id: "quantity", header: "Quantity" },
     {
-      id: "total",
-      header: "Total",
+      id: "1",
+      product: (
+        <ProductsTableProduct>Flaux leather Beige bag</ProductsTableProduct>
+      ),
+      color: "Blue",
+      price: "250",
+      costs: "Flaux leather bag",
+      revenue: "4",
+    },
+    {
+      id: "1",
+      product: (
+        <ProductsTableProduct>Flaux leather Beige bag</ProductsTableProduct>
+      ),
+      color: "Blue",
+      price: "250",
+      costs: "Flaux leather bag",
+      revenue: "4",
     },
   ];
-
   return (
     <>
       <AdminCard className={"mb-10"} padding="p-6">

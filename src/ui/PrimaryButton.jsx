@@ -4,7 +4,7 @@ export default function PrimaryButton({
   children,
   className,
   isLink,
-  onCLick,
+  onClick,
   padding,
   rounded = "rounded-lg md:rounded-xl",
   color = "bg-tertiary",
@@ -22,7 +22,7 @@ export default function PrimaryButton({
     );
   return (
     <button
-      onClick={onCLick}
+      onClick={onClick}
       className={` py-2 px-5 text-sm ${rounded} md:text-md lg:text-lg ${className} ${color} hover:opacity-75 text-white transition-all duration-150`}
       style={{ padding: padding }}
     >

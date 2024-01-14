@@ -1,13 +1,22 @@
 import { FaEdit } from "react-icons/fa";
 import StarRatingDisplay from "../../ui/StarRatingDisplay";
 import Tag from "../../ui/Tag";
+import Modal from "../../ui/Modal";
+import EditProductForm from "./EditProductForm";
 export default function AdminProductDetails() {
   return (
     <div className="flex flex-col items-center justify-between">
       <div className="flex items-start justify-start  w-full flex-col gap-1">
         <h1 className="text-2xl text-gray-700 font-semibold m">
           Amazing Modern Bag (Beige){" "}
-          <FaEdit className="inline ml-2 text-gray-400 hover:text-gray-800 cursor-pointer duration-200 transition-all" />
+          <Modal>
+            <Modal.OpenModal opens={"product-edit"}>
+              <FaEdit className="inline ml-2 text-gray-400 hover:text-gray-800 cursor-pointer duration-200 transition-all" />
+            </Modal.OpenModal>
+            <Modal.Window name={"product-edit"}>
+              <EditProductForm />
+            </Modal.Window>
+          </Modal>
         </h1>
         <p className="font-thin text-md text-gray-500">
           Added Date: 09/12/2018
