@@ -1,6 +1,9 @@
-export default function Form({ children, className }) {
+export default function Form({ children, className, onSubmit }) {
   return (
-    <form className={`flex items-start flex-col justify-center ${className}`}>
+    <form
+      onSubmit={onSubmit}
+      className={`flex items-start flex-col justify-center ${className}`}
+    >
       {children}
     </form>
   );

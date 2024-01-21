@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function PrimaryButton({
+  type,
   children,
   className,
   isLink,
@@ -22,6 +23,7 @@ export default function PrimaryButton({
     );
   return (
     <button
+      type={type}
       onClick={onClick}
       className={` py-2 px-5 text-sm ${rounded} md:text-md lg:text-lg ${className} ${color} hover:opacity-75 text-white transition-all duration-150`}
       style={{ padding: padding }}

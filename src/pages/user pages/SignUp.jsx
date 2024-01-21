@@ -4,7 +4,7 @@ import Section from "../../ui/Section";
 export default function SignUp() {
   return (
     <Section>
-      <SignUpForm />;
+      <SignUpForm />
     </Section>
   );
 }

@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&display=swap");
-@import "@radix-ui/colors/black-alpha.css";
-@import "@radix-ui/colors/mauve.css";
-@import "@radix-ui/colors/violet.css";
-@import "@fontsource/roboto/300.css";
-@import "@fontsource/roboto/400.css";
-@import "@fontsource/roboto/500.css";
-@import "@fontsource/roboto/700.css";
+
 * {
   padding: 0;
   margin: 0;
@@ -18,12 +12,13 @@
   filter: blur(50px);
   color: rgba(203, 208, 221, 0.54);
 }
-.backdrop-blur {
-  backdrop-filter: blur(1px);
-}
-.products-grid {
-  grid-template-columns: 5rem 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
 .table-layout-auto {
   table-layout: auto;
+}
+.form-input {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
