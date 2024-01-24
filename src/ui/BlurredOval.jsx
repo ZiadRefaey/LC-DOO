@@ -9,7 +9,7 @@ export default function BlurredOval({
   return (
     <div
       id="oval-blur"
-      className={`absolute ${width} ${height} bg-${color}  ${top} ${left} rounded-full -z-10${className} blur-oval `}
+      className={`absolute ${width} ${height} bg-${color}  ${top} ${left} rounded-full -z-10${className} blur-2xl `}
     ></div>
   );
 }

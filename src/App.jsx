@@ -17,7 +17,7 @@ import AdminCustomers from "./pages/admin pages/AdminCustomers";
 import AdminProjects from "./pages/admin pages/AdminProjects";
 import AdminProjectOverview from "./pages/admin pages/AdminProjectOverview";
 import AdminProductOverview from "./pages/admin pages/AdminProductOverview";
-
+import { QueryClient, QueryClientProvider } from "react-query";
 export const ScreenContext = createContext(null);
 const router = createBrowserRouter([
   {
@@ -43,6 +43,9 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 60000 } },
+});
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -68,9 +71,12 @@ function App() {
   };
   return (
     <>
-      <ScreenContext.Provider value={screenSizes}>
-        <RouterProvider router={router} />
-      </ScreenContext.Provider>
+      <QueryClientProvider client={queryClient}>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+        <ScreenContext.Provider value={screenSizes}>
+          <RouterProvider router={router}></RouterProvider>
+        </ScreenContext.Provider>
+      </QueryClientProvider>
     </>
   );
 }
