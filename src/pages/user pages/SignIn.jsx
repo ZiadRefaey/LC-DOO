@@ -1,9 +1,9 @@
-import SingInForm from "../../features/registeration/SingInForm";
+import SignInForm from "../../features/registeration/SignInForm";
 import Section from "../../ui/Section";
 export default function SignIn() {
   return (
     <Section>
-      <SingInForm />
+      <SignInForm />
     </Section>
   );
 }

@@ -6,7 +6,7 @@ import PrimaryButton from "../../ui/PrimaryButton";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../services/apiAuth";
 import { ClipLoader } from "react-spinners";
-const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/; // Email Regex
+import { emailRegex } from "../../utils/Regex";
 
 export default function SignUpForm() {
   const navigate = useNavigate();

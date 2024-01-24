@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(true);
 
     try {
-      await signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       setError("");
 
       setIsLoading(false);
@@ -54,9 +54,10 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(true);
 
     try {
-      await signOut();
+      await signOut(auth);
       setIsLoading(false);
       setError("");
+      console.log(user);
     } catch (error) {
       console.error("Logout failed:", error.message);
       setIsLoading(false);
