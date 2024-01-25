@@ -1,19 +1,19 @@
-import { useContext } from "react";
-import BlurredOval from "../../../ui/BlurredOval";
+// import { useContext } from "react";
+// import BlurredOval from "../../../ui/BlurredOval";
 import HeroImagePanel from "./HeroImagePanel";
 import HeroTextPanel from "./HeroTextPanel";
 import Section from "../../../ui/Section";
-import { ScreenContext } from "../../../App";
+// import { ScreenContext } from "../../../App";
 
 export default function Hero() {
-  const screenWidth = useContext(ScreenContext);
+  // const screenWidth = useContext(ScreenContext);
   return (
     <Section
       className={
         "grid grid-cols-1 xl:grid-cols-2 py-10 relative gap-10 max-w-[1280px]"
       }
     >
-      <BlurredOval
+      {/* <BlurredOval
         width={
           screenWidth.currentWidth < screenWidth.small
             ? "w-[240px]"
@@ -44,7 +44,7 @@ export default function Hero() {
             ? "-translate-x-[50%] -translate-y-[50%]"
             : ""
         }
-      />
+      /> */}
 
       <HeroTextPanel />
       <HeroImagePanel />

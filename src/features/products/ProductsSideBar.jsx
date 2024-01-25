@@ -1,7 +1,6 @@
 import RadioGroup from "../../ui/RadioGroup";
 import MultiRangeSlider from "multi-range-slider-react";
-import RatingRadioButton from "../../ui/RatingRadioButton";
-
+import RatingRadioButton from "../../components/RatingRadioButton";
 const radioFilters = [
   {
     title: "Category",

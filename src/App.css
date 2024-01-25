@@ -22,3 +22,6 @@
   padding: 0.5rem 1rem;
   width: 100%;
 }
+.popover {
+  z-index: 1000000;
+}

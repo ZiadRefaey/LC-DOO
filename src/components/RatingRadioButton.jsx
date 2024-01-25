@@ -1,4 +1,4 @@
-import StarRatingDisplay from "./StarRatingDisplay";
+import StarRatingDisplay from "../ui/StarRatingDisplay";
 
 export default function RatingRadioButton({ rating }) {
   return (

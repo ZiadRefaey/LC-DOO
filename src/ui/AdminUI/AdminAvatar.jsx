@@ -1,8 +1,11 @@
 import Avatar from "../../assets/avatar.jpg";
 
-export default function AdminAvatar() {
+export default function AdminAvatar({ onMouseEnter }) {
   return (
-    <div className="w-[50px] h-[50px] cursor-pointer">
+    <div
+      onMouseEnter={onMouseEnter}
+      className="w-[50px] h-[50px] cursor-pointer"
+    >
       <img
         src={Avatar}
         className="w-full h-full object-contain rounded-full"
