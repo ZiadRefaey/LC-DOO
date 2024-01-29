@@ -1,4 +1,4 @@
-import Avatar from "../../assets/avatar.jpg";
+import Avatar from "../../assets/default avatar.jpg";
 
 export default function AdminAvatar({ onMouseEnter }) {
   return (
