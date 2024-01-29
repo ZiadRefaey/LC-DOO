@@ -1,4 +1,4 @@
-import SignInForm from "../../features/registeration/SignInForm";
+import SignInForm from "../../features/users/SignInForm";
 import Section from "../../ui/Section";
 export default function SignIn() {
   return (

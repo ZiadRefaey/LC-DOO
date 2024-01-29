@@ -4,7 +4,7 @@ import { HiXMark } from "react-icons/hi2";
 const PopoverContext = createContext();
 
 export function Popover({ children }) {
-  const [openPopover, setOpenPopover] = useState("users-nav-avatar");
+  const [openPopover, setOpenPopover] = useState("");
   console.log();
   function show(popoverName) {
     setOpenPopover(popoverName);

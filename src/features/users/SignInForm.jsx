@@ -1,14 +1,16 @@
-import Form from "../../ui/Form";
-import PrimaryButton from "../../ui/PrimaryButton";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../services/apiAuth";
 import { useForm } from "react-hook-form";
-import { ClipLoader } from "react-spinners";
+import Form from "../../ui/Form";
 import { emailRegex } from "../../utils/Regex";
+import PrimaryButton from "../../ui/PrimaryButton";
+import { ClipLoader } from "react-spinners";
+import useUsers from "./useUsers";
 
 export default function SignInForm() {
   const navigate = useNavigate();
-  const { login, logout, user, isLoading } = useAuth();
+  const { login, user, isLoading } = useAuth();
+  const { isLoading: usersFetchLoading } = useUsers();
   const {
     register,
     handleSubmit,
@@ -20,8 +22,10 @@ export default function SignInForm() {
       password: "123123",
     },
   });
+
   return (
     <>
+      {usersFetchLoading && <ClipLoader />}
       <Form
         onSubmit={handleSubmit((userCreds) => {
           login(userCreds.email, userCreds.password);
@@ -58,8 +62,6 @@ export default function SignInForm() {
           type={"password"}
           placeholder={"Password"}
         ></input>
-
-        <a onClick={() => logout()}>log out</a>
 
         <PrimaryButton className={"w-full"} padding={"0.65rem 0rem"}>
           {isLoading ? <ClipLoader color="white" size={28} /> : "Log In"}

@@ -7,9 +7,14 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../../services/apiAuth";
 import { ClipLoader } from "react-spinners";
 import { emailRegex } from "../../utils/Regex";
+import useCreateUser from "./useCreateUser";
+// import { createUser } from "../../services/apiUsers";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../services/firebase";
 
 export default function SignUpForm() {
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -25,16 +30,38 @@ export default function SignUpForm() {
       phoneNumber: "01010923960",
     },
   });
-  const { signup, isLoading, error: AuthError } = useAuth();
+  const { signup, isLoading: isAuthenticating } = useAuth();
+  const { createUser, isCreating } = useCreateUser();
+
   const password = watch("password", "123123"); // Watch the 'password' field
 
+  //function to ensure the firestore only executes when the user updates
+  const waitForUserUpdate = () => {
+    return new Promise((resolve) => {
+      const unsubscribe = onAuthStateChanged(auth, (updatedUser) => {
+        // Check if the updatedUser is not null
+        if (updatedUser) {
+          resolve(updatedUser);
+          unsubscribe(); // Unsubscribe to avoid memory leaks
+        }
+      });
+    });
+  };
   return (
     <>
       <Form
-        onSubmit={handleSubmit((userCreds) => {
-          signup(userCreds.email, userCreds.password);
-          console.log(AuthError);
-          console.log(userCreds);
+        onSubmit={handleSubmit(async (userCreds) => {
+          //create and authenticate the user with email and password
+          await signup(userCreds.email, userCreds.password);
+          const updatedUser = await waitForUserUpdate();
+          //Create a new user in the firestore
+          const userInfo = {
+            fullName: userCreds.fullName,
+            email: userCreds.email,
+            phoneNumber: userCreds.phoneNumber,
+          };
+          createUser({ id: updatedUser.uid, newUserData: userInfo });
+
           navigate("/products");
         })}
         className={
@@ -118,7 +145,11 @@ export default function SignUpForm() {
           className={"w-full flex items-center justify-center"}
           padding={"0.65rem 0rem"}
         >
-          {isLoading ? <ClipLoader color="white" size={28} /> : "Sign Up"}
+          {isAuthenticating || isCreating ? (
+            <ClipLoader color="white" size={28} />
+          ) : (
+            "Sign Up"
+          )}
         </PrimaryButton>
       </Form>
       <p className="text-center w-full">

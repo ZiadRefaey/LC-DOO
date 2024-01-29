@@ -1,4 +1,4 @@
-import SignUpForm from "../../features/registeration/SignUpForm";
+import SignUpForm from "../../features/users/SignUpForm";
 import Section from "../../ui/Section";
 
 export default function SignUp() {

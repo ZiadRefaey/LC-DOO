@@ -30,6 +30,11 @@ export default function DesktopNavbar() {
           <Popover>
             <Popover.Trigger name={"users-nav-avatar"}>
               <AdminAvatar />
+              <div>
+                {user.email}
+                <br></br>
+                {user.uid}
+              </div>
             </Popover.Trigger>
             <Popover.Content name={"users-nav-avatar"}>
               <Link

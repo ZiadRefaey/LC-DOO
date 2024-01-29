@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "./firebase";
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
@@ -14,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
 
@@ -57,7 +58,6 @@ export const AuthProvider = ({ children }) => {
       await signOut(auth);
       setIsLoading(false);
       setError("");
-      console.log(user);
     } catch (error) {
       console.error("Logout failed:", error.message);
       setIsLoading(false);
