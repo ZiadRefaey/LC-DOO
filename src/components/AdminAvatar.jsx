@@ -1,4 +1,4 @@
-import Avatar from "../assets/default avatar.jpg";
+import Avatar from "../assets/ProfilePicture.jpg";
 
 export default function AdminAvatar({ onMouseEnter, profilePic }) {
   return (
@@ -8,7 +8,7 @@ export default function AdminAvatar({ onMouseEnter, profilePic }) {
     >
       <img
         src={profilePic ? profilePic : Avatar}
-        className="w-full h-full object-contain rounded-full"
+        className="w-full h-full object-cover rounded-full"
         alt="avatar image"
       />
     </div>

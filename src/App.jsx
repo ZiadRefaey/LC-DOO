@@ -18,6 +18,7 @@ import AdminProjects from "./pages/admin pages/AdminProjects";
 import AdminProjectOverview from "./pages/admin pages/AdminProjectOverview";
 import AdminProductOverview from "./pages/admin pages/AdminProductOverview";
 import { QueryClient, QueryClientProvider } from "react-query";
+import UserProfile from "./pages/user pages/UserProfile";
 export const ScreenContext = createContext(null);
 const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
       { path: "/admin/customers", element: <AdminCustomers /> },
       { path: "/admin/projects", element: <AdminProjects /> },
       { path: "/admin/projects/:projectId", element: <AdminProjectOverview /> },
+      { path: "/userprofile/:uid", element: <UserProfile /> },
     ],
   },
 ]);

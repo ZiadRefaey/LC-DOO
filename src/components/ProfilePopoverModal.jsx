@@ -6,7 +6,7 @@ export default function ProfilePopoverModal() {
   return (
     <>
       <Link
-        to={"/"}
+        to={"/userprofile/1"}
         className="bg-primary px-2 py-1 hover:bg-adminSecondary transition-all duration-200 min-w-[12rem] rounded-xl border border-1 border-gray-300 text-center"
       >
         View profile
