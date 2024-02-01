@@ -9,7 +9,7 @@ import useUsers from "./useUsers";
 
 export default function SignInForm() {
   const navigate = useNavigate();
-  const { login, user, isLoading } = useAuth();
+  const { login, isLoading } = useAuth();
   const { isLoading: usersFetchLoading } = useUsers();
   const {
     register,
@@ -19,7 +19,7 @@ export default function SignInForm() {
     mode: "onBlur",
     defaultValues: {
       email: "ziad182000@gmail.com",
-      password: "123123",
+      password: "S4leaguelol",
     },
   });
 
@@ -29,8 +29,7 @@ export default function SignInForm() {
       <Form
         onSubmit={handleSubmit((userCreds) => {
           login(userCreds.email, userCreds.password);
-          navigate("/");
-          console.log(user);
+          // navigate("/");
         })}
         className={
           "m-auto gap-5 w-[70%] max-w-[500px] border border-gray-200 p-4 rounded-lg my-2"

@@ -6,12 +6,12 @@ import NavLogo from "./NavLogo";
 import { useAuth } from "../services/apiAuth";
 import ThemeSwitcher from "../components/ThemeSwitcher";
 import AuthButtons from "../components/AuthButtons";
-import AdminAvatar from "./AdminUI/AdminAvatar";
+import AdminAvatar from "../components/AdminAvatar";
 import { Popover } from "../components/Popover";
-import { Link } from "react-router-dom";
+import ProfilePopoverModal from "../components/ProfilePopoverModal";
 
 export default function DesktopNavbar() {
-  const { user, logout } = useAuth();
+  const { fireStoreUser: user } = useAuth();
   const [isFocused, setIsFocused] = useState(false);
   return (
     <NavWrapper>
@@ -29,21 +29,10 @@ export default function DesktopNavbar() {
         {user && (
           <Popover>
             <Popover.Trigger name={"users-nav-avatar"}>
-              <AdminAvatar />
+              <AdminAvatar profilePic={user.pfp} />
             </Popover.Trigger>
             <Popover.Content name={"users-nav-avatar"}>
-              <Link
-                to={"/"}
-                className="bg-primary px-2 py-1 hover:bg-adminSecondary transition-all duration-200 min-w-[12rem] rounded-xl border border-1 border-gray-300 text-center"
-              >
-                View profile
-              </Link>
-              <button
-                onClick={() => logout()}
-                className="bg-danger px-2 min-w-[12rem] text-white rounded-xl py-1 transition-all duration-200 hover:bg-opacity-90"
-              >
-                Logout
-              </button>
+              <ProfilePopoverModal />
             </Popover.Content>
           </Popover>
         )}

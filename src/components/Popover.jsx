@@ -5,7 +5,6 @@ const PopoverContext = createContext();
 
 export function Popover({ children }) {
   const [openPopover, setOpenPopover] = useState("");
-  console.log();
   function show(popoverName) {
     setOpenPopover(popoverName);
   }
@@ -27,7 +26,6 @@ function Trigger({ children, name }) {
   return cloneElement(children, {
     onMouseEnter: () => {
       show(name);
-      console.log("working");
     },
   });
 }

@@ -2,7 +2,7 @@ import { IoSunnyOutline } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import AdminSearch from "./AdminSearch";
 import { IoMenu } from "react-icons/io5";
-import AdminAvatar from "./AdminAvatar";
+import AdminAvatar from "../../components/AdminAvatar";
 
 export default function AdminHeader() {
   return (

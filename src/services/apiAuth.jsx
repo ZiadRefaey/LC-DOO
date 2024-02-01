@@ -1,22 +1,42 @@
 // AuthContext.js
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "./firebase";
+import { auth, db } from "./firebase";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [fireStoreUser, setFireStoreUser] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
+
+      if (user) {
+        try {
+          const docRef = doc(db, "users", user.uid);
+          const docSnapshot = await getDoc(docRef);
+
+          if (docSnapshot.exists()) {
+            setFireStoreUser(docSnapshot.data());
+          } else {
+            console.error("Error: User data not found");
+          }
+        } catch (error) {
+          console.error("Error fetching user:", error.message);
+        }
+      } else {
+        // Handle the case where user is not authenticated
+        setFireStoreUser(null);
+      }
     });
 
     return () => unsubscribe();
@@ -74,6 +94,7 @@ export const AuthProvider = ({ children }) => {
         logout,
         isLoading,
         error,
+        fireStoreUser,
       }}
     >
       {children}
