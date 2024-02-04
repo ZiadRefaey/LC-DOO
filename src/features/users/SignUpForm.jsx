@@ -11,6 +11,7 @@ import useCreateUser from "./useCreateUser";
 // import { createUser } from "../../services/apiUsers";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../services/firebase";
+import FormValidationAlert from "../../ui/FormValidationAlert";
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -22,13 +23,13 @@ export default function SignUpForm() {
     watch,
   } = useForm({
     mode: "onBlur",
-    defaultValues: {
-      fullName: "Ziad Refaey",
-      email: "test@example.com",
-      password: "123123",
-      confirmPassword: "123123",
-      phoneNumber: "01010923960",
-    },
+    // defaultValues: {
+    //   fullName: "Ziad Refaey",
+    //   email: "test@example.com",
+    //   password: "123123",
+    //   confirmPassword: "123123",
+    //   phoneNumber: "01010923960",
+    // },
   });
   const { signup, isLoading: isAuthenticating } = useAuth();
   const { createUser, isCreating } = useCreateUser();
@@ -59,6 +60,8 @@ export default function SignUpForm() {
             fullName: userCreds.fullName,
             email: userCreds.email,
             phoneNumber: userCreds.phoneNumber,
+            address: userCreds.address,
+            gender: userCreds.gender,
           };
           createUser({ id: updatedUser.uid, newUserData: userInfo });
 
@@ -139,7 +142,29 @@ export default function SignUpForm() {
             },
           })}
         />
+        {errors.address?.message && (
+          <FormValidationAlert className="" role="alert">
+            {errors.address.message}
+          </FormValidationAlert>
+        )}
+        <input
+          placeholder="Address"
+          type="text"
+          id="address"
+          {...register("address", {
+            required: "This field is required",
+            minLength: {
+              value: 10,
+              message: "Should atleast be 10 characters",
+            },
+          })}
+          className="form-input"
+        />
 
+        <select id="gender" {...register("gender")} className="form-input">
+          <option>Female</option>
+          <option>Male</option>
+        </select>
         <PrimaryButton
           type={"submit"}
           className={"w-full flex items-center justify-center"}

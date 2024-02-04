@@ -1,10 +1,20 @@
-import { collection, getDocs, setDoc, doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  setDoc,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "./firebase";
 
+//fetch all users
 export async function getUsers() {
   const querySnapshot = await getDocs(collection(db, "users"));
   return querySnapshot;
 }
+
+//get the current user given the uid
 export async function getCurrentUser(id) {
   const docRef = doc(db, "users", id);
   const docSnapshot = await getDoc(docRef);
@@ -14,7 +24,9 @@ export async function getCurrentUser(id) {
     return "error not found";
   }
 }
+//Function to create users
 export async function createUser(id, newUser) {
+  //set User data to the from the passed in new user object then set some default data
   try {
     await setDoc(doc(db, "users", id), {
       ...newUser,
@@ -23,7 +35,6 @@ export async function createUser(id, newUser) {
       dob: null,
       themePref: "null",
       pfp: null,
-      address: null,
       lastLogin: new Date(),
       verified: false,
       reviews: [],
@@ -32,14 +43,17 @@ export async function createUser(id, newUser) {
     console.log(error);
   }
 }
-
+//update fields of the user that matches the id with the fields passed in newUser
 export async function updateUser(id, newUser) {
   try {
-    const docRef = await setDoc(doc(db, "users", id), {
+    await updateDoc(doc(db, "users", id), {
       ...newUser,
     });
-    console.log(docRef);
+    const updatedDocSnapshot = await getDoc(doc(db, "users", id));
+    const updatedUser = updatedDocSnapshot.data();
+
+    return updatedUser;
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error("Error updating document: ", e);
   }
 }

@@ -16,8 +16,10 @@ export const AuthProvider = ({ children }) => {
   const [fireStoreUser, setFireStoreUser] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setIsLoading(true);
       setUser(user);
 
       if (user) {
@@ -27,15 +29,19 @@ export const AuthProvider = ({ children }) => {
 
           if (docSnapshot.exists()) {
             setFireStoreUser(docSnapshot.data());
+            setError("");
           } else {
-            console.error("Error: User data not found");
+            setError("Error: User data not found");
           }
+          setIsLoading(false);
         } catch (error) {
-          console.error("Error fetching user:", error.message);
+          setError("Error fetching user:" + error.message);
+          setIsLoading(false);
         }
       } else {
         // Handle the case where user is not authenticated
         setFireStoreUser(null);
+        setIsLoading(false);
       }
     });
 

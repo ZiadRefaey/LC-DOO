@@ -1,13 +1,17 @@
 import { useMutation } from "react-query";
-import { updateUser } from "../../services/apiUsers";
+import { updateUser as updateUserApi } from "../../services/apiUsers";
 
 export default function useUpdateUser() {
-  const { isLoading, mutate } = useMutation({
-    mutationFn: () => updateUser,
+  const {
+    isLoading: isUpdating,
+    mutate: updateUser,
+    error: updateError,
+  } = useMutation({
+    mutationFn: updateUserApi,
     onSuccess: () => {
       console.log("user updated");
     },
-    onError: () => console.log("error"),
+    onError: (error) => console.log("error updating user:" + error),
   });
-  return { isLoading, mutate };
+  return { isUpdating, updateUser, updateError };
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import profilePic from "../assets/ProfilePicture.jpg";
 import { IoCameraOutline } from "react-icons/io5";
 
-export default function UserProfileImage() {
+export default function UserProfileImage({ pfp }) {
   const [pictureIsHovered, setPictureIsHovered] = useState(false);
   return (
     <div
@@ -17,7 +17,7 @@ export default function UserProfileImage() {
       >
         <IoCameraOutline className="text-4xl text-gray-800" />
       </button>
-      <img src={profilePic} alt="Profile picture" />
+      <img src={pfp ? pfp : profilePic} alt="Profile picture" />
     </div>
   );
 }
